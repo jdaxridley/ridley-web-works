@@ -1,0 +1,14 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/plans", "destination": "/plans.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/referrals", "destination": "/referrals.html" },
+    { "source": "/work", "destination": "/referrals.html" },
+    { "source": "/leave-review", "destination": "/leave-review.html" },
+    { "source": "/thanks", "destination": "/thanks.html" }
+  ]
+}

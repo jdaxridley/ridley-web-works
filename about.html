@@ -2,111 +2,116 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>About | Ridley Web Works</title>
+<title>About Dax | Ridley Web Works</title>
+<meta name="description" content="Dax Ridley builds done-for-you websites for local service businesses. Fast, honest, and direct.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>.logo span{color:#E8601C;}
-
-
-
-
-  .page-header{padding:72px 24px 64px;border-bottom:1px solid rgba(255,255,255,.07);}
-  .ph-inner{max-width:1200px;margin:0 auto;}
-  .page-header h1{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:#fff;margin-bottom:10px;}
-  .page-header p{color:rgba(255,255,255,.4);font-size:17px;max-width:480px;}
-  .section{padding:72px 24px;}
+<style>
   .about-inner{max-width:820px;margin:0 auto;}
   .story p{color:rgba(255,255,255,.45);font-size:17px;line-height:1.9;margin-bottom:18px;}
   .story strong{color:#e5e5e5;}
   .pull{border-left:3px solid #E8601C;padding:24px 32px;margin:40px 0;background:rgba(232,96,28,.04);border-radius:0 4px 4px 0;}
   .pull p{font-family:'Fraunces',serif;font-style:italic;font-size:22px;color:#fff;line-height:1.6;}
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(255,255,255,.07);border-radius:4px;overflow:hidden;margin:48px 0;}
-  .stat{padding:36px;text-align:center;border-right:1px solid rgba(255,255,255,.07);}
-  .stat:last-child{border-right:none;}
-  .stat-n{font-family:'Fraunces',serif;font-size:40px;font-weight:700;color:#E8601C;line-height:1;}
-  .stat-l{font-size:13px;color:rgba(255,255,255,.3);margin-top:8px;}
   .values{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);border-radius:4px;overflow:hidden;margin-top:32px;}
-  .val{background:#1a1a1a;padding:36px;}
-  .val:hover{background:#222222;}
+  .val{background:#1a1a1a;padding:36px;transition:background .2s;}
+  .val:hover{background:#222;}
   .val h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;}
   .val p{color:rgba(255,255,255,.35);font-size:14px;line-height:1.75;}
-  .cta-band{background:#E8601C;padding:72px 24px;text-align:center;}
-  .cta-band h2{font-family:'Fraunces',serif;font-size:34px;font-weight:700;color:#fff;margin-bottom:12px;}
-  .cta-band p{color:rgba(255,255,255,.8);font-size:16px;margin-bottom:28px;}
-  @media(max-width:600px){.stats{grid-template-columns:1fr;}.stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);}.values{grid-template-columns:1fr;}}</style>
+  @media(max-width:600px){.values{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
 <header>
 <div class="nav-inner">
-  <a href="index.html" class="logo"><img src="logo-dark.svg" alt="Ridley Web Works" style="height:64px;"></a>
+  <a href="index.html" class="logo"><img src="logo-dark.svg" alt="Ridley Web Works"></a>
   <nav>
-    <a href="index.html" class=" desk">Home</a>
-    <a href="services.html" class=" desk">Services</a>
-    <a href="plans.html" class="desk">Plans</a>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="plans.html">Plans</a>
     <a href="about.html" class="active">About</a>
-    <a href="referrals.html" class="">Reviews</a>
-    <a href="contact.html" class="">Contact</a>
+    <a href="referrals.html">Work</a>
+    <a href="contact.html">Contact</a>
     <a href="contact.html" class="nav-cta">Get Your Site</a>
   </nav>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </div>
 </header>
-<div class="page-header"><div class="ph-inner"><h1>Built by someone who gets it</h1><p>Not an agency. Not a template mill. One developer who builds great websites fast, hosts them, and keeps them running.</p></div></div>
-<section class="section"><div class="about-inner">
-  <div class="story">
-    <p>My name is <strong>Dax Ridley</strong>. I'm a 22-year-old web developer based in Kansas City. I've been building websites since I was a teenager, learning by doing — taking on real projects, solving real problems, and getting better with every one.</p>
-    <p>I started paying attention to local service businesses and noticed the same problem everywhere. <strong>The ones losing customers had either no website at all or a DIY template that looked like it was built in 2014.</strong> The ones winning had professional sites with booking, reviews, and a way for customers to reach them instantly.</p>
-    <p>The gap wasn't talent or quality of work. It was a website. Agencies were charging $3,000 to $5,000 upfront plus $500 or more per month just to keep the lights on. For a small business running on tight margins, that's not realistic. There's a better way.</p>
-    <p>So I built a system. I use AI tools I've trained specifically for each industry to generate custom sites in 48 hours, with booking, contact forms, and AI chat included standard. Same quality a $5K agency delivers, at a fraction of the cost.</p>
-    <p><strong>I build every site myself.</strong> You talk to me, not an account manager. When you text at 9pm asking to change a phone number, I'm the one who does it.</p>
+<nav class="nav-mobile" id="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="plans.html">Plans</a>
+  <a href="about.html" class="active">About</a>
+  <a href="referrals.html">Work</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="nav-cta">Get Your Site</a>
+</nav>
+
+<div class="page-header">
+  <div class="ph-inner">
+    <h1>Built by someone who gets it</h1>
+    <p>Not an agency. Not a template mill. One developer who builds great websites fast, hosts them, and keeps them running.</p>
   </div>
-  <div class="pull"><p>I build your site the same way I'd build it if my own business depended on it. Because my reputation does.</p></div>
-  <div class="stats">
-    <div class="stat"><div class="stat-n">48h</div><div class="stat-l">Average delivery</div></div>
-    <div class="stat"><div class="stat-n">$99/mo</div><div class="stat-l">Starting monthly rate</div></div>
-    <div class="stat"><div class="stat-n">N/A</div><div class="stat-l">Client satisfaction</div></div>
+</div>
+
+<section class="section">
+  <div class="about-inner">
+    <div class="story">
+      <p>My name is <strong>Dax Ridley</strong>. I'm a web developer based in Kansas City. I've been building websites since I was a teenager, learning by doing — taking on real projects, solving real problems, and getting better with every one.</p>
+      <p>I started paying attention to local service businesses and noticed the same problem everywhere. <strong>The ones losing customers had either no website at all, or a DIY template that looked like it was built in 2014.</strong> The ones winning had professional sites with booking, reviews, and a way for customers to reach them instantly.</p>
+      <p>The gap wasn't talent or quality of work. It was a website. Agencies were charging $3,000 to $5,000 upfront plus $500 or more per month just to keep the lights on. For a small business running on tight margins, that's not realistic. There's a better way.</p>
+      <p>So I built a system. I use purpose-built tools for each industry to deliver custom sites in 48 hours — with booking calendar, contact forms, and everything else included. Same quality a $5K agency delivers, at a price that actually makes sense.</p>
+      <p><strong>I build every site myself.</strong> You talk to me, not an account manager. When you text at 9pm asking to change a phone number, I'm the one who does it.</p>
+    </div>
+    <div class="pull"><p>I build your site the same way I'd build it if my own business depended on it. Because my reputation does.</p></div>
+    <h2 style="font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:#fff;margin:48px 0 12px;">How I work</h2>
+    <p style="color:rgba(255,255,255,.4);font-size:16px;margin-bottom:24px;">Four things that stay true on every project.</p>
+    <div class="values">
+      <div class="val"><h3>Fast</h3><p>48-hour turnaround. You send your info, I build the site, you go live. No 6-week timelines.</p></div>
+      <div class="val"><h3>Direct</h3><p>You talk to me. Not a project manager, not a sales rep. Text, call, or email — and I'll actually respond.</p></div>
+      <div class="val"><h3>Honest</h3><p>Pricing is clear upfront. The invoice matches the quote. No surprise add-ons, no locked contracts.</p></div>
+      <div class="val"><h3>Specialized</h3><p>I only build for local service businesses. That focus means better results than a generalist who does everything.</p></div>
+    </div>
   </div>
-  <h2 style="font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:#fff;margin:48px 0 12px;">How I work</h2>
-  <p style="color:rgba(255,255,255,.4);font-size:16px;margin-bottom:24px;">Four things that stay true on every project.</p>
-  <div class="values">
-    <div class="val"><h3>Fast</h3><p>48-hour turnaround. You send your info, I build the site, you go live. No 6-week timelines.</p></div>
-    <div class="val"><h3>Direct</h3><p>You talk to me. Not a project manager, not a sales rep. Text, call, or email.</p></div>
-    <div class="val"><h3>Honest</h3><p>Pricing is clear upfront. The invoice matches the quote. No surprise add-ons, no locked contracts.</p></div>
-    <div class="val"><h3>Specialized</h3><p>I only build for local service businesses. That focus means better results than a generalist.</p></div>
-  </div>
-</div></section>
+</section>
+
 <div class="cta-band">
   <h2>Let's build something.</h2>
   <p>Fill out the form or call me directly.</p>
-    <a href="contact.html" class="btn btn-white" style="font-size:16px;padding:15px 36px;">Get Your Website</a>
-  <p style="margin-top:16px;font-size:14px;color:rgba(255,255,255,.5);">Or call: <a href="tel:9132589693" style="color:#fff;font-weight:600;">(913) 258-9693</a></p>
+  <a href="contact.html" class="btn btn-white" style="font-size:16px;padding:15px 36px;">Get Your Website</a>
+  <p style="margin-top:16px;font-size:14px;color:rgba(255,255,255,.6);">Or call: <a href="tel:9132589693" style="color:#fff;font-weight:600;">(913) 258-9693</a></p>
 </div>
+
 <footer>
 <div class="ft-grid">
   <div class="ft-brand">
-    <span class="logo" style="font-family:'Fraunces',serif;">Ridley <span style="color:#E8601C">Web Works</span></span>
-    <p>Done-for-you websites for local service businesses. Booking, contact form, and AI chat included. 48-hour delivery, one flat fee.</p>
+    <span class="ft-logo">Ridley <span>Web Works</span></span>
+    <p>Done-for-you websites for local service businesses. Booking calendar, contact form, mobile-optimized. 48-hour delivery.</p>
   </div>
   <div class="ft-col">
     <h4>Pages</h4>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="plans.html" class="desk">Plans</a>
     <a href="plans.html">Plans</a>
     <a href="about.html">About</a>
-    <a href="referrals.html">Reviews</a>
+    <a href="referrals.html">Work</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="ft-col">
     <h4>Contact</h4>
     <a href="tel:9132589693">(913) 258-9693</a>
-    <a href="mailto:daxsonridley04@gmail.com">daxsonridley04@gmail.com</a>
+    <a href="mailto:dax@ridleywebworks.com">dax@ridleywebworks.com</a>
     <p>Overland Park, KS</p>
     <p>Mon–Fri 9am–6pm CST</p>
   </div>
 </div>
 <div class="ft-bottom">&copy; 2026 Ridley Web Works. Built by Dax Ridley.</div>
 </footer>
-<script src="//code.tidio.co/5t43iwp3hf9wqe4cdkzbkcmmoddgrtac.js" async></script>
-
+<script>
+const btn = document.getElementById('hamburger');
+const menu = document.getElementById('nav-mobile');
+btn.addEventListener('click', () => { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+</script>
 </body></html>

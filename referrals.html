@@ -2,145 +2,119 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Client Reviews | Ridley Web Works</title>
+<title>Client Work | Ridley Web Works</title>
+<meta name="description" content="See what Ridley Web Works has built for local service businesses.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .page-header{padding:72px 24px 64px;border-bottom:1px solid rgba(255,255,255,.07);}
-  .ph-inner{max-width:1200px;margin:0 auto;}
-  .page-header h1{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:#fff;margin-bottom:10px;}
-  .page-header p{color:rgba(255,255,255,.4);font-size:17px;max-width:520px;line-height:1.7;}
-  .section{padding:72px 24px 88px;}
-  .reviews-inner{max-width:800px;margin:0 auto;}
-
-  .empty-state{text-align:center;padding:80px 24px;border:1px solid rgba(255,255,255,.07);border-radius:4px;background:rgba(255,255,255,.02);}
-  .empty-state h2{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:10px;}
-  .empty-state p{color:rgba(255,255,255,.35);font-size:16px;line-height:1.7;}
-
-  /* Review cards — ready for when reviews come in */
-  .review{border-bottom:1px solid rgba(255,255,255,.07);padding:40px 0;}
-  .review:first-child{padding-top:0;}
-  .review:last-child{border-bottom:none;}
-  .review-stars{display:flex;gap:3px;margin-bottom:14px;}
-  .review-stars svg{width:18px;height:18px;}
-  .review-stars svg path{fill:#E8601C;}
-  .review-text{font-size:17px;color:rgba(255,255,255,.6);line-height:1.8;font-style:italic;margin-bottom:16px;}
-  .review-author{font-size:14px;font-weight:600;color:#fff;}
-  .review-biz{font-size:13px;color:rgba(255,255,255,.3);margin-top:2px;}
-  .review-url a{font-size:13px;color:#f07a3a;}
-  .site-preview{margin-top:16px;border:1px solid rgba(255,255,255,.07);border-radius:4px;overflow:hidden;width:100%;max-width:400px;aspect-ratio:16/10;position:relative;background:#111;}
-  .site-preview iframe{width:200%;height:200%;transform:scale(0.5);transform-origin:top left;border:none;pointer-events:none;overflow:hidden;}
-  .site-preview{overflow:hidden;}
-  .site-preview a{position:absolute;inset:0;z-index:2;}
-
-  .cta-band{background:#E8601C;padding:64px 24px;text-align:center;}
-  .cta-band h2{font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:#fff;margin-bottom:10px;}
-  .cta-band p{color:rgba(255,255,255,.8);font-size:16px;margin-bottom:24px;}
+  .portfolio-inner{max-width:860px;margin:0 auto;}
+  .empty-state{text-align:center;padding:96px 24px;border:1px solid rgba(255,255,255,.07);border-radius:4px;background:rgba(255,255,255,.02);}
+  .empty-icon{font-size:48px;margin-bottom:20px;}
+  .empty-state h2{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:12px;}
+  .empty-state p{color:rgba(255,255,255,.35);font-size:16px;line-height:1.7;max-width:480px;margin:0 auto 28px;}
+  .what-to-expect{max-width:860px;margin:56px auto 0;border:1px solid rgba(255,255,255,.07);border-radius:4px;overflow:hidden;}
+  .expect-header{padding:24px 32px;border-bottom:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02);}
+  .expect-header h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#fff;}
+  .expect-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+  .expect-item{padding:28px 32px;border-bottom:1px solid rgba(255,255,255,.07);border-right:1px solid rgba(255,255,255,.07);}
+  .expect-item:nth-child(even){border-right:none;}
+  .expect-item:nth-last-child(-n+2){border-bottom:none;}
+  .expect-item h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;}
+  .expect-item p{color:rgba(255,255,255,.35);font-size:13px;line-height:1.7;}
+  @media(max-width:600px){.expect-grid{grid-template-columns:1fr;}.expect-item{border-right:none;}.expect-item:nth-last-child(-n+2){border-bottom:1px solid rgba(255,255,255,.07);}.expect-item:last-child{border-bottom:none;}}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-
 <header>
 <div class="nav-inner">
-  <a href="index.html" class="logo"><img src="logo-dark.svg" alt="Ridley Web Works" style="height:64px;"></a>
+  <a href="index.html" class="logo"><img src="logo-dark.svg" alt="Ridley Web Works"></a>
   <nav>
-    <a href="index.html" class="desk">Home</a>
-    <a href="services.html" class="desk">Services</a>
-    <a href="plans.html" class="desk">Plans</a>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
     <a href="plans.html">Plans</a>
     <a href="about.html">About</a>
-    <a href="referrals.html" class="active">Reviews</a>
+    <a href="referrals.html" class="active">Work</a>
     <a href="contact.html">Contact</a>
     <a href="contact.html" class="nav-cta">Get Your Site</a>
   </nav>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </div>
 </header>
+<nav class="nav-mobile" id="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="plans.html">Plans</a>
+  <a href="about.html">About</a>
+  <a href="referrals.html" class="active">Work</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="nav-cta">Get Your Site</a>
+</nav>
 
-<div class="page-header"><div class="ph-inner">
-  <h1>Client reviews</h1>
-  <p>Real feedback from real business owners who trusted us with their online presence.</p>
-</div></div>
+<div class="page-header">
+  <div class="ph-inner">
+    <h1>Client work</h1>
+    <p>Sites built for local service businesses that needed a professional online presence, fast.</p>
+  </div>
+</div>
 
 <section class="section">
-  <div class="reviews-inner">
-
-    <div id="reviews-container">
-      <div class="empty-state" id="empty-state">
-        <h2>Reviews coming soon</h2>
-        <p>We just launched and are delivering our first round of client sites. Check back shortly.</p>
-      </div>
+  <div class="portfolio-inner">
+    <div class="empty-state">
+      <div class="empty-icon">🔨</div>
+      <h2>First client sites in progress</h2>
+      <p>We're currently delivering our first round of client sites. Check back soon — this page will showcase real builds for real businesses.</p>
+      <a href="contact.html" class="btn btn-orange">Be one of the first</a>
     </div>
 
-    <script>
-    var starSvg = '<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
-
-    async function loadReviews() {
-      try {
-        var sb = window.supabase.createClient('https://zkraupojxriwyrucfmaw.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprcmF1cG9qeHJpd3lydWNmbWF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIyNTk3MjIsImV4cCI6MjA4NzgzNTcyMn0.u0Ggz_cniUGgwE8nZzSNFyECIvzJ73qLHIo849BNwlo');
-        var { data: reviews, error } = await sb.from('reviews').select('*').eq('approved', true).order('created_at', { ascending: false });
-        if (error) throw error;
-        if (!reviews.length) return;
-
-        document.getElementById('empty-state').style.display = 'none';
-        var container = document.getElementById('reviews-container');
-
-        reviews.forEach(function(r) {
-          var div = document.createElement('div');
-          div.className = 'review';
-          var stars = '';
-          for (var i = 0; i < r.rating; i++) stars += starSvg;
-          var urlHtml = r.url ? '<div class="review-url"><a href="' + r.url + '" target="_blank">View their site</a></div>' : '';
-          div.innerHTML = '<div class="review-stars">' + stars + '</div>' +
-            '<p class="review-text">"' + r.review + '"</p>' +
-            '<div class="review-author">' + r.name + '</div>' +
-            '<div class="review-biz">' + r.business + '</div>' +
-            urlHtml;
-          if (r.url) {
-            div.innerHTML = '<div class="site-preview"><iframe src="' + r.url + '" loading="lazy" sandbox="allow-same-origin" scrolling="no"></iframe><a href="' + r.url + '" target="_blank" title="Visit site"></a></div>' + div.innerHTML;
-          }
-          container.appendChild(div);
-        });
-      } catch(e) { console.error(e); }
-    }
-    loadReviews();
-    </script>
-
+    <div class="what-to-expect">
+      <div class="expect-header"><h3>What you'll see here</h3></div>
+      <div class="expect-grid">
+        <div class="expect-item"><h4>Live site links</h4><p>Direct links to every site we've built — you can click through and see the real thing, not a screenshot.</p></div>
+        <div class="expect-item"><h4>Industry coverage</h4><p>Plumbing, HVAC, roofing, landscaping, electrical — each one customized for that trade and city.</p></div>
+        <div class="expect-item"><h4>Client reviews</h4><p>What the business owner thought of the process and outcome, in their own words.</p></div>
+        <div class="expect-item"><h4>Build details</h4><p>Plan type, delivery time, and what was included in each project.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <div class="cta-band">
   <h2>Ready for your own website?</h2>
-  <p>$800. 48 hours. Everything included.</p>
+  <p>48 hours. Everything included. Contact us to get a quote.</p>
   <a href="contact.html" class="btn btn-white" style="font-size:16px;padding:15px 36px;">Get Your Website</a>
 </div>
 
 <footer>
 <div class="ft-grid">
   <div class="ft-brand">
-    <span class="logo" style="font-family:'Fraunces',serif;">Ridley <span style="color:#E8601C">Web Works</span></span>
-    <p>Done-for-you websites for local service businesses. Booking, contact form, and AI chat included. 48-hour delivery, one flat fee.</p>
+    <span class="ft-logo">Ridley <span>Web Works</span></span>
+    <p>Done-for-you websites for local service businesses. Booking calendar, contact form, mobile-optimized. 48-hour delivery.</p>
   </div>
   <div class="ft-col">
     <h4>Pages</h4>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
+    <a href="plans.html">Plans</a>
     <a href="about.html">About</a>
-    <a href="referrals.html">Reviews</a>
+    <a href="referrals.html">Work</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="ft-col">
     <h4>Contact</h4>
     <a href="tel:9132589693">(913) 258-9693</a>
-    <a href="mailto:daxsonridley04@gmail.com">daxsonridley04@gmail.com</a>
+    <a href="mailto:dax@ridleywebworks.com">dax@ridleywebworks.com</a>
     <p>Overland Park, KS</p>
+    <p>Mon–Fri 9am–6pm CST</p>
   </div>
 </div>
 <div class="ft-bottom">&copy; 2026 Ridley Web Works. Built by Dax Ridley.</div>
 </footer>
-
-<script src="//code.tidio.co/5t43iwp3hf9wqe4cdkzbkcmmoddgrtac.js" async></script>
-
-</body>
-</html>
+<script>
+const btn = document.getElementById('hamburger');
+const menu = document.getElementById('nav-mobile');
+btn.addEventListener('click', () => { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+</script>
+</body></html>

@@ -1,0 +1,12 @@
+{
+  "name": "ridley-web-works",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Ridley Web Works — done-for-you websites for local service businesses",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 4321",
+    "start": "python3 -m http.server 4321",
+    "build": "node -e \"console.log('Static site with Vercel API endpoint')\""
+  }
+}

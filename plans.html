@@ -3,66 +3,35 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Plans | Ridley Web Works</title>
+<meta name="description" content="Ridley Web Works pricing plans — Starter, Professional, and Premium. Get a quote for your project.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
-  .page-header{padding:72px 24px 64px;border-bottom:1px solid rgba(255,255,255,.07);}
-  .ph-inner{max-width:1200px;margin:0 auto;}
-  .page-header h1{font-family:'Fraunces',serif;font-size:44px;font-weight:700;color:#fff;margin-bottom:10px;}
-  .page-header p{color:rgba(255,255,255,.4);font-size:17px;max-width:520px;line-height:1.7;margin:0 auto;}
-
-  .section{padding:72px 24px;}
   .plans-inner{max-width:1100px;margin:0 auto;}
-
   .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);border-radius:4px;overflow:hidden;}
-  .plan{background:#1a1a1a;padding:44px 24px;display:flex;flex-direction:column;}
+  .plan{background:#1a1a1a;padding:44px 28px;display:flex;flex-direction:column;}
   .plan.featured{background:#1f1f1f;}
-
   .plan-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.25);margin-bottom:16px;height:18px;}
   .plan.featured .plan-tag{color:#E8601C;}
-
-  .plan-name{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:6px;min-height:40px;}
-  .plan-price{font-family:'Fraunces',serif;font-size:42px;font-weight:800;color:#fff;margin-bottom:4px;}
-  .plan-price span{font-size:18px;font-weight:400;color:rgba(255,255,255,.3);}
-  .plan-note{font-size:13px;color:rgba(255,255,255,.3);margin-bottom:28px;min-height:20px;}
-
-  .plan-desc{font-size:15px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.07);height:136px;}
-
+  .plan-name{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:8px;}
+  .plan-price{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:#E8601C;margin-bottom:4px;}
+  .plan-desc{font-size:15px;color:rgba(255,255,255,.45);line-height:1.7;margin:16px 0 24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.07);}
   .plan-features{list-style:none;flex:1;margin-bottom:32px;}
   .plan-features li{font-size:14px;color:rgba(255,255,255,.5);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:baseline;gap:10px;}
   .plan-features li:last-child{border-bottom:none;}
   .plan-features li .dot{width:6px;height:6px;background:#E8601C;border-radius:50%;flex-shrink:0;margin-top:5px;}
   .plan-features li.no .dot{background:rgba(255,255,255,.1);}
   .plan-features li.no{color:rgba(255,255,255,.2);}
-
   .plan-cta{margin-top:auto;}
   .plan-cta a{display:block;text-align:center;padding:14px;border-radius:4px;font-weight:700;font-size:15px;transition:all .2s;font-family:'Outfit',sans-serif;}
-  .plan-cta-ghost{background:transparent;border:1.5px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);}
-  .plan-cta-ghost:hover{border-color:rgba(255,255,255,.3);color:#fff;}
-  .plan-cta-fill{background:#E8601C;color:#fff;border:1.5px solid #E8601C;}
-  .plan-cta-fill:hover{background:#cc4f12;}
-
-  /* Add-on section */
-  .addon-section{border-top:1px solid rgba(255,255,255,.07);padding:72px 24px;}
-  .addon-inner{max-width:700px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(255,255,255,.07);border-radius:4px;overflow:hidden;}
-  .addon-left{padding:40px 36px;background:rgba(255,255,255,.02);}
-  .addon-left h3{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:4px;}
-  .addon-price{font-family:'Fraunces',serif;font-size:32px;font-weight:800;color:#E8601C;margin-bottom:4px;}
-  .addon-price span{font-size:16px;font-weight:400;color:rgba(255,255,255,.3);}
-  .addon-note{font-size:13px;color:rgba(255,255,255,.3);margin-bottom:16px;}
-  .addon-desc{font-size:15px;color:rgba(255,255,255,.4);line-height:1.7;}
-  .addon-right{padding:40px 36px;}
-  .addon-right ul{list-style:none;}
-  .addon-right li{font-size:14px;color:rgba(255,255,255,.5);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:10px;align-items:baseline;}
-  .addon-right li:last-child{border-bottom:none;}
-  .addon-right li .dot{width:6px;height:6px;background:#E8601C;border-radius:50%;flex-shrink:0;margin-top:5px;}
-
-  /* Compare table */
-  .compare-section{border-top:1px solid rgba(255,255,255,.07);padding:72px 24px;}
+  .cta-ghost{background:transparent;border:1.5px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);}
+  .cta-ghost:hover{border-color:rgba(255,255,255,.3);color:#fff;}
+  .cta-fill{background:#E8601C;color:#fff;border:1.5px solid #E8601C;}
+  .cta-fill:hover{background:#cc4f12;}
   .compare-inner{max-width:900px;margin:0 auto;}
   .compare-inner h2{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:8px;}
-  .compare-inner>p{color:rgba(255,255,255,.4);font-size:15px;margin-bottom:32px;}
+  .compare-inner > p{color:rgba(255,255,255,.4);font-size:15px;margin-bottom:32px;}
   .cmp{border:1px solid rgba(255,255,255,.07);border-radius:4px;overflow:hidden;}
   .cmp-row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;border-bottom:1px solid rgba(255,255,255,.07);}
   .cmp-row:last-child{border-bottom:none;}
@@ -71,137 +40,129 @@
   .cmp-cell.feat{color:rgba(255,255,255,.6);font-weight:500;}
   .cmp-cell.yes{color:#E8601C;font-weight:600;}
   .cmp-cell.no{color:rgba(255,255,255,.15);}
-
-  .cta-band{background:#E8601C;padding:72px 24px;text-align:center;}
-  .cta-band h2{font-family:'Fraunces',serif;font-size:34px;font-weight:700;color:#fff;margin-bottom:12px;}
-  .cta-band p{color:rgba(255,255,255,.8);font-size:16px;margin-bottom:28px;}
-
-  @media(max-width:768px){
-    .plans-grid{grid-template-columns:1fr;}
-    .addon-inner{grid-template-columns:1fr;}
-    .cmp-row{grid-template-columns:1fr 1fr;}
-  }
+  @media(max-width:900px){.plans-grid{grid-template-columns:1fr;}}
+  @media(max-width:600px){.cmp-row{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
-
 <header>
 <div class="nav-inner">
-  <a href="index.html" class="logo"><img src="logo-dark.svg" alt="Ridley Web Works" style="height:64px;"></a>
+  <a href="index.html" class="logo"><img src="logo-dark.svg" alt="Ridley Web Works"></a>
   <nav>
-    <a href="index.html" class="desk">Home</a>
-    <a href="services.html" class="desk">Services</a>
-    <a href="plans.html" class="active desk">Plans</a>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="plans.html" class="active">Plans</a>
     <a href="about.html">About</a>
-    <a href="referrals.html" class="">Reviews</a>
+    <a href="referrals.html">Work</a>
     <a href="contact.html">Contact</a>
     <a href="contact.html" class="nav-cta">Get Your Site</a>
   </nav>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </div>
 </header>
+<nav class="nav-mobile" id="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="plans.html" class="active">Plans</a>
+  <a href="about.html">About</a>
+  <a href="referrals.html">Work</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="nav-cta">Get Your Site</a>
+</nav>
 
-<div class="page-header"><div class="ph-inner">
-  <h1 style="text-align:center;">Pick your plan</h1>
-  <p style="text-align:center;color:rgba(255,255,255,.45);font-size:16px;margin-top:12px;">Three tiers. One flat build. Own it outright or subscribe and let us handle everything.</p>
-</div></div>
+<div class="page-header">
+  <div class="ph-inner" style="text-align:center;">
+    <h1>Pick your plan</h1>
+    <p style="margin:0 auto;">Three tiers. One flat build. Own it outright or subscribe and let us handle everything — including hosting.</p>
+  </div>
+</div>
 
 <section class="section">
   <div class="plans-inner">
-    <p style="text-align:center;font-size:14px;color:rgba(255,255,255,.35);margin-bottom:32px;border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:14px;">Hosting and maintenance included with Subscription — cancel anytime.</p>
+    <p style="text-align:center;font-size:14px;color:rgba(255,255,255,.35);margin-bottom:32px;border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:14px;">Pricing is available on request. <a href="contact.html" style="color:#E8601C;font-weight:600;">Contact us</a> to get a quote for your project.</p>
     <div class="plans-grid">
 
       <!-- STARTER -->
       <div class="plan">
         <div class="plan-tag">Starter</div>
         <div class="plan-name">Starter</div>
-        <div class="plan-price">$49 <span>/mo</span></div>
-        <div class="plan-note">$99 setup fee</div>
-        <p class="plan-desc">A clean, professional single-page site. Everything on one scroll. Perfect for solo operators who just need to be online.</p>
+        <div class="plan-price">Get a Quote</div>
+        <p class="plan-desc">A clean, professional single-page site. Everything on one scroll. Perfect for solo operators who just need to be online and taking calls.</p>
         <ul class="plan-features">
           <li><span class="dot"></span>1-page scrolling site</li>
           <li><span class="dot"></span>Contact form</li>
           <li><span class="dot"></span>Click-to-call phone number</li>
           <li><span class="dot"></span>Mobile-optimized</li>
           <li><span class="dot"></span>Hosting included</li>
-          <li><span class="dot"></span>Unlimited small edits</li>
+          <li><span class="dot"></span>Small edits included</li>
           <li><span class="dot"></span>48-hour delivery</li>
           <li class="no"><span class="dot"></span>Online booking calendar</li>
-          <li class="no"><span class="dot"></span>AI chat assistant</li>
-          <li class="no"><span class="dot"></span>Reviews page</li>
-          <li class="no"><span class="dot"></span>Custom logo</li>
+          <li class="no"><span class="dot"></span>Multi-page site</li>
+          <li class="no"><span class="dot"></span>Custom logo design</li>
         </ul>
-        <div class="plan-price-alt" style="margin-bottom:16px;padding:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:4px;text-align:center;font-size:13px;color:rgba(255,255,255,.3);">Prefer to own it outright? <strong style="color:rgba(255,255,255,.5);">$500 one-time</strong></div>
-        <div class="plan-cta"><a href="contact.html" class="plan-cta-ghost">Get Started</a><a href="templates/starter/index.html" target="_blank" style="display:block;text-align:center;margin-top:10px;font-size:13px;color:rgba(255,255,255,.35);font-weight:500;">See template</a></div>
+        <div class="plan-cta"><a href="contact.html" class="cta-ghost">Get a Quote</a></div>
       </div>
 
       <!-- PROFESSIONAL -->
       <div class="plan featured">
         <div class="plan-tag">Most Popular</div>
         <div class="plan-name">Professional</div>
-        <div class="plan-price">$99 <span>/mo</span></div>
-        <div class="plan-note">$199 setup fee</div>
-        <p class="plan-desc">The full 4-page site with booking and contact form. Everything a local business needs to look professional and capture leads.</p>
+        <div class="plan-price">Get a Quote</div>
+        <p class="plan-desc">The full multi-page site with booking calendar and contact form. Everything a local business needs to look professional and capture leads consistently.</p>
         <ul class="plan-features">
           <li><span class="dot"></span>4-page site (Home, Services, About, Contact)</li>
-          <li><span class="dot"></span>Contact form with email routing</li>
+          <li><span class="dot"></span>Contact form with email delivery</li>
           <li><span class="dot"></span>Click-to-call phone number</li>
           <li><span class="dot"></span>Mobile-optimized</li>
           <li><span class="dot"></span>Hosting included</li>
-          <li><span class="dot"></span>Unlimited small edits</li>
+          <li><span class="dot"></span>Small edits included</li>
           <li><span class="dot"></span>48-hour delivery</li>
-          <li><span class="dot"></span>Online booking calendar (Calendly)</li>
-          <li class="no"><span class="dot"></span>AI chat assistant</li>
+          <li><span class="dot"></span>Online booking calendar</li>
           <li class="no"><span class="dot"></span>Reviews page</li>
-          <li class="no"><span class="dot"></span>Custom logo</li>
+          <li class="no"><span class="dot"></span>Custom logo design</li>
         </ul>
-        <div class="plan-price-alt" style="margin-bottom:16px;padding:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:4px;text-align:center;font-size:13px;color:rgba(255,255,255,.3);">Prefer to own it outright? <strong style="color:rgba(255,255,255,.5);">$800 one-time</strong></div>
-        <div class="plan-cta"><a href="contact.html" class="plan-cta-fill">Get Started</a><a href="templates/professional/index.html" target="_blank" style="display:block;text-align:center;margin-top:10px;font-size:13px;color:rgba(255,255,255,.35);font-weight:500;">See template</a></div>
+        <div class="plan-cta"><a href="contact.html" class="cta-fill">Get a Quote</a></div>
       </div>
 
       <!-- PREMIUM -->
       <div class="plan">
         <div class="plan-tag">Full Package</div>
         <div class="plan-name">Premium</div>
-        <div class="plan-price">$149 <span>/mo</span></div>
-        <div class="plan-note">$299 setup fee</div>
-        <p class="plan-desc">Everything in Professional plus AI chat, a reviews system, and a custom logo. The complete online presence for serious businesses.</p>
+        <div class="plan-price">Get a Quote</div>
+        <p class="plan-desc">Everything in Professional plus a reviews page, custom logo, and priority turnaround. The complete online presence for businesses ready to stand out.</p>
         <ul class="plan-features">
           <li><span class="dot"></span>4-page site (Home, Services, About, Contact)</li>
-          <li><span class="dot"></span>Contact form with email routing</li>
+          <li><span class="dot"></span>Contact form with email delivery</li>
           <li><span class="dot"></span>Click-to-call phone number</li>
           <li><span class="dot"></span>Mobile-optimized</li>
           <li><span class="dot"></span>Hosting included</li>
-          <li><span class="dot"></span>Unlimited small edits</li>
+          <li><span class="dot"></span>Small edits included</li>
           <li><span class="dot"></span>48-hour delivery</li>
-          <li><span class="dot"></span>Online booking calendar (Calendly)</li>
-          <li><span class="dot"></span>AI chat assistant (Tidio)</li>
-          <li><span class="dot"></span>Reviews page with client portal</li>
+          <li><span class="dot"></span>Online booking calendar</li>
+          <li><span class="dot"></span>Reviews page</li>
           <li><span class="dot"></span>Custom logo design</li>
         </ul>
-        <div class="plan-price-alt" style="margin-bottom:16px;padding:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:4px;text-align:center;font-size:13px;color:rgba(255,255,255,.3);">Prefer to own it outright? <strong style="color:rgba(255,255,255,.5);">$1,200 one-time</strong></div>
-        <div class="plan-cta"><a href="contact.html" class="plan-cta-ghost">Get Started</a><a href="templates/premium/index.html" target="_blank" style="display:block;text-align:center;margin-top:10px;font-size:13px;color:rgba(255,255,255,.35);font-weight:500;">See template</a></div>
+        <div class="plan-cta"><a href="contact.html" class="cta-ghost">Get a Quote</a></div>
       </div>
 
     </div>
   </div>
 </section>
 
-
-
-<!-- COMPARISON -->
-<section class="compare-section">
+<section class="section" style="border-top:1px solid rgba(255,255,255,.07);">
   <div class="compare-inner">
     <h2>How we compare</h2>
-    <p>Same result as an agency. Fraction of the cost and time.</p>
+    <p>Same result as an agency. A fraction of the cost and time.</p>
     <div class="cmp">
       <div class="cmp-row head"><div class="cmp-cell"></div><div class="cmp-cell">Ridley Web Works</div><div class="cmp-cell">Typical Agency</div><div class="cmp-cell">DIY / Wix</div></div>
-      <div class="cmp-row"><div class="cmp-cell feat">Upfront cost</div><div class="cmp-cell yes">$500 - $1,200</div><div class="cmp-cell no">$3,000 - $5,000</div><div class="cmp-cell no">$0 - $500</div></div>
-      <div class="cmp-row"><div class="cmp-cell feat">Monthly cost</div><div class="cmp-cell yes">$0 (optional $50)</div><div class="cmp-cell no">$500 - $1,500</div><div class="cmp-cell no">$16 - $45</div></div>
-      <div class="cmp-row"><div class="cmp-cell feat">Delivery time</div><div class="cmp-cell yes">48 hours</div><div class="cmp-cell no">4 - 8 weeks</div><div class="cmp-cell no">You do the work</div></div>
+      <div class="cmp-row"><div class="cmp-cell feat">Upfront cost</div><div class="cmp-cell yes">Contact for quote</div><div class="cmp-cell no">$3,000 – $5,000</div><div class="cmp-cell no">$0 – $500</div></div>
+      <div class="cmp-row"><div class="cmp-cell feat">Delivery time</div><div class="cmp-cell yes">48 hours</div><div class="cmp-cell no">4 – 8 weeks</div><div class="cmp-cell no">You do the work</div></div>
       <div class="cmp-row"><div class="cmp-cell feat">Built for your trade</div><div class="cmp-cell yes">Yes</div><div class="cmp-cell no">Generic</div><div class="cmp-cell no">Generic</div></div>
+      <div class="cmp-row"><div class="cmp-cell feat">Booking calendar</div><div class="cmp-cell yes">Pro &amp; Premium</div><div class="cmp-cell no">Add-on</div><div class="cmp-cell no">No</div></div>
       <div class="cmp-row"><div class="cmp-cell feat">Your time required</div><div class="cmp-cell yes">5 minutes</div><div class="cmp-cell no">Hours of meetings</div><div class="cmp-cell no">40+ hours</div></div>
-      <div class="cmp-row"><div class="cmp-cell feat">AI chat included</div><div class="cmp-cell yes">Premium plan</div><div class="cmp-cell no">Add-on</div><div class="cmp-cell no">No</div></div>
-      <div class="cmp-row"><div class="cmp-cell feat">Booking calendar</div><div class="cmp-cell yes">Pro + Premium</div><div class="cmp-cell no">Add-on</div><div class="cmp-cell no">No</div></div>
+      <div class="cmp-row"><div class="cmp-cell feat">Hosting included</div><div class="cmp-cell yes">Yes, all plans</div><div class="cmp-cell no">Extra charge</div><div class="cmp-cell no">Extra charge</div></div>
     </div>
   </div>
 </section>
@@ -210,14 +171,14 @@
   <h2>Not sure which plan? Let's talk.</h2>
   <p>15-minute call. No pressure. We'll figure out the right fit together.</p>
   <a href="contact.html" class="btn btn-white" style="font-size:16px;padding:15px 36px;">Contact Us</a>
-  <p style="margin-top:16px;font-size:14px;color:rgba(255,255,255,.5);">Or call: <a href="tel:9132589693" style="color:#fff;font-weight:600;">(913) 258-9693</a></p>
+  <p style="margin-top:16px;font-size:14px;color:rgba(255,255,255,.6);">Or call: <a href="tel:9132589693" style="color:#fff;font-weight:600;">(913) 258-9693</a></p>
 </div>
 
 <footer>
 <div class="ft-grid">
   <div class="ft-brand">
-    <span class="logo" style="font-family:'Fraunces',serif;">Ridley <span style="color:#E8601C">Web Works</span></span>
-    <p>Done-for-you websites for local service businesses. Booking, contact form, and AI chat included. 48-hour delivery, one flat fee.</p>
+    <span class="ft-logo">Ridley <span>Web Works</span></span>
+    <p>Done-for-you websites for local service businesses. Booking calendar, contact form, mobile-optimized. 48-hour delivery.</p>
   </div>
   <div class="ft-col">
     <h4>Pages</h4>
@@ -225,20 +186,22 @@
     <a href="services.html">Services</a>
     <a href="plans.html">Plans</a>
     <a href="about.html">About</a>
-    <a href="referrals.html">Reviews</a>
+    <a href="referrals.html">Work</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="ft-col">
     <h4>Contact</h4>
     <a href="tel:9132589693">(913) 258-9693</a>
-    <a href="mailto:daxsonridley04@gmail.com">daxsonridley04@gmail.com</a>
+    <a href="mailto:dax@ridleywebworks.com">dax@ridleywebworks.com</a>
     <p>Overland Park, KS</p>
+    <p>Mon–Fri 9am–6pm CST</p>
   </div>
 </div>
 <div class="ft-bottom">&copy; 2026 Ridley Web Works. Built by Dax Ridley.</div>
 </footer>
-
-<script src="//code.tidio.co/5t43iwp3hf9wqe4cdkzbkcmmoddgrtac.js" async></script>
-</body>
-</html>
-<!-- 1772262566 -->
+<script>
+const btn = document.getElementById('hamburger');
+const menu = document.getElementById('nav-mobile');
+btn.addEventListener('click', () => { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+</script>
+</body></html>

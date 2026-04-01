@@ -3,17 +3,14 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Done-for-you websites for local service businesses | Ridley Web Works</title>
+<meta name="description" content="Ridley Web Works builds and hosts professional websites for local service businesses. Booking calendar, contact form, mobile-optimized. Live in 48 hours.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>.logo span{color:#E8601C;}
-
-
-
-
+<style>
   .hero{padding:120px 24px 100px;position:relative;overflow:hidden;}
   .hero-inner{max-width:780px;margin:0 auto;text-align:center;position:relative;z-index:1;}
-  .hero h1{font-family:'Fraunces',serif;font-size:54px;font-weight:800;color:#fff;line-height:1.12;letter-spacing:-.5px;margin-bottom:22px;}
+  .hero h1{font-family:'Fraunces',serif;font-size:56px;font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.5px;margin-bottom:22px;}
   .hero h1 em{color:#E8601C;font-style:normal;}
   .hero-sub{font-size:18px;color:rgba(255,255,255,.45);max-width:520px;margin:0 auto 40px;line-height:1.8;}
   .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
@@ -25,15 +22,10 @@
   .proof-num{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:#fff;line-height:1;}
   .proof-label{font-size:13px;color:rgba(255,255,255,.3);margin-top:6px;}
 
-  .section{padding:88px 24px;}
-  .section-inner{max-width:1100px;margin:0 auto;}
-  .tag{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#E8601C;display:block;margin-bottom:10px;}
-  .section-h{font-family:'Fraunces',serif;font-size:36px;font-weight:700;color:#fff;line-height:1.25;margin-bottom:14px;}
-  .section-sub{color:rgba(255,255,255,.4);font-size:16px;margin-bottom:52px;max-width:480px;line-height:1.7;}
-
   .inc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);border-radius:4px;overflow:hidden;}
   .inc-item{background:#1a1a1a;padding:40px 32px;transition:background .2s;}
-  .inc-item:hover{background:#222222;}
+  .inc-item:hover{background:#222;}
+  .inc-icon{font-size:24px;margin-bottom:14px;}
   .inc-item h3{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:10px;}
   .inc-item p{color:rgba(255,255,255,.4);font-size:14px;line-height:1.75;}
 
@@ -53,40 +45,54 @@
   .how-step h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:10px;}
   .how-step p{color:rgba(255,255,255,.4);font-size:14px;line-height:1.75;}
 
+  .faq-item{padding:24px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+  .faq-item:last-child{border-bottom:none;}
+  .faq-item h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;}
+  .faq-item p{color:rgba(255,255,255,.4);font-size:15px;line-height:1.75;}
+
   .book-section{border-top:1px solid rgba(255,255,255,.07);}
   .book-inner{max-width:700px;margin:0 auto;text-align:center;}
   .book-inner h2{font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:#fff;margin-bottom:10px;}
   .book-inner>p{color:rgba(255,255,255,.4);font-size:16px;margin-bottom:32px;}
 
-  .cta-band{background:#E8601C;padding:80px 24px;text-align:center;}
-  .cta-band h2{font-family:'Fraunces',serif;font-size:38px;font-weight:700;color:#fff;margin-bottom:14px;}
-  .cta-band p{font-size:17px;color:rgba(255,255,255,.8);margin-bottom:32px;}
-
-  @media(max-width:900px){.inc-grid{grid-template-columns:1fr;}.how-grid{grid-template-columns:1fr;}.how-step{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);}}
-  @media(max-width:600px){.hero h1{font-size:36px;}.proof-inner{grid-template-columns:repeat(2,1fr);}.cmp-row{grid-template-columns:1fr 1fr;}}</style>
+  @media(max-width:900px){.inc-grid{grid-template-columns:1fr 1fr;}.how-grid{grid-template-columns:1fr;}.how-step{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);}}
+  @media(max-width:600px){.hero h1{font-size:36px;}.proof-inner{grid-template-columns:repeat(2,1fr);}.cmp-row{grid-template-columns:1fr 1fr;}.inc-grid{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
 <header>
 <div class="nav-inner">
-  <a href="index.html" class="logo"><img src="logo-dark.svg" alt="Ridley Web Works" style="height:64px;"></a>
+  <a href="index.html" class="logo"><img src="logo-dark.svg" alt="Ridley Web Works"></a>
   <nav>
-    <a href="index.html" class="active desk">Home</a>
-    <a href="services.html" class=" desk">Services</a>
-    <a href="plans.html" class="desk">Plans</a>
-    <a href="about.html" class="">About</a>
-    <a href="referrals.html" class="">Reviews</a>
-    <a href="contact.html" class="">Contact</a>
+    <a href="index.html" class="active">Home</a>
+    <a href="services.html">Services</a>
+    <a href="plans.html">Plans</a>
+    <a href="about.html">About</a>
+    <a href="referrals.html">Work</a>
+    <a href="contact.html">Contact</a>
     <a href="contact.html" class="nav-cta">Get Your Site</a>
   </nav>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </div>
 </header>
+<nav class="nav-mobile" id="nav-mobile">
+  <a href="index.html" class="active">Home</a>
+  <a href="services.html">Services</a>
+  <a href="plans.html">Plans</a>
+  <a href="about.html">About</a>
+  <a href="referrals.html">Work</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="nav-cta">Get Your Site</a>
+</nav>
 
 <section class="hero">
   <div class="hero-inner">
     <h1>A website that works <em>as hard as you do.</em></h1>
-    <p class="hero-sub">We build and host complete, professional websites for local service businesses. Booking, contact form, and AI chat included. Subscribe monthly or own it outright.</p>
+    <p class="hero-sub">Done-for-you websites for local service businesses. Booking calendar, contact form, mobile-optimized, and live in 48 hours.</p>
     <div class="hero-cta">
-    <a href="contact.html" class="btn btn-orange" style="font-size:16px;padding:16px 40px;">Get Your Website</a>
+      <a href="contact.html" class="btn btn-orange" style="font-size:16px;padding:16px 40px;">Get Your Website</a>
       <a href="services.html" class="btn btn-ghost" style="font-size:16px;padding:16px 40px;">What's Included</a>
     </div>
   </div>
@@ -94,10 +100,10 @@
 
 <div class="proof-strip">
   <div class="proof-inner">
-    <div class="proof-item"><div class="proof-num">48h</div><div class="proof-label">Average delivery</div></div>
+    <div class="proof-item"><div class="proof-num">48h</div><div class="proof-label">Avg. delivery</div></div>
     <div class="proof-item"><div class="proof-num">8+</div><div class="proof-label">Industries served</div></div>
-    <div class="proof-item"><div class="proof-num">$49/mo</div><div class="proof-label">Starting price</div></div>
-    <div class="proof-item"><div class="proof-num">$99</div><div class="proof-label">Setup fee</div></div>
+    <div class="proof-item"><div class="proof-num">100%</div><div class="proof-label">Done-for-you</div></div>
+    <div class="proof-item"><div class="proof-num">1</div><div class="proof-label">Person. You talk to Dax.</div></div>
   </div>
 </div>
 
@@ -107,28 +113,51 @@
     <h2 class="section-h">A complete site. Not a starting point.</h2>
     <p class="section-sub">Everything a local service business needs to look professional and start getting leads online.</p>
     <div class="inc-grid">
-      <div class="inc-item"><h3>4-Page Professional Site</h3><p>Home, Services, About, Contact. Custom design for your industry, your colors, your services. Mobile-first.</p></div>
-      <div class="inc-item"><h3>Online Booking Calendar</h3><p>Customers book directly from your site. Calendly integration lets you wake up to appointments, not voicemails.</p></div>
-      <div class="inc-item"><h3>Contact Form</h3><p>Every lead lands in your inbox. Name, phone, email, service needed. Zero maintenance on your end.</p></div>
-      <div class="inc-item"><h3>AI Chat Assistant</h3><p>Answers customer questions 24/7, captures leads, and routes urgent jobs to your phone number automatically.</p></div>
-      <div class="inc-item"><h3>Mobile-Optimized</h3><p>Over 60% of local searches happen on phones. Your site loads fast, looks sharp, and has click-to-call everywhere.</p></div>
-      <div class="inc-item"><h3>Done in 48 Hours</h3><p>Send us your info. We build the site. You review, approve, go live. No 6-week timeline.</p></div>
+      <div class="inc-item">
+        <div class="inc-icon">🏠</div>
+        <h3>Professional Website</h3>
+        <p>Custom design for your industry, your services, your city. Home, Services, About, and Contact. Mobile-first and fast.</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-icon">📅</div>
+        <h3>Online Booking Calendar</h3>
+        <p>Customers book directly from your site. You wake up to appointments in your calendar, not voicemails.</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-icon">✉️</div>
+        <h3>Contact Form</h3>
+        <p>Every lead lands in your inbox. Name, phone, email, message. Zero maintenance on your end.</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-icon">📱</div>
+        <h3>Mobile-Optimized</h3>
+        <p>Over 60% of local searches happen on phones. Your site loads fast, looks sharp, and has click-to-call everywhere.</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-icon">🔧</div>
+        <h3>Hosted &amp; Maintained</h3>
+        <p>We handle hosting, updates, and uptime. Your site just works. No dealing with GoDaddy or WordPress plugins.</p>
+      </div>
+      <div class="inc-item">
+        <div class="inc-icon">⚡</div>
+        <h3>Done in 48 Hours</h3>
+        <p>Send us your info. We build the site. You review, approve, go live. No 6-week timelines or design committees.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section" style="border-top:1px solid rgba(255,255,255,.07);">
   <div class="section-inner" style="text-align:center;">
-    <span class="tag">Pricing</span>
+    <span class="tag">Compare</span>
     <h2 class="section-h" style="text-align:center;">Same result. Fraction of the cost.</h2>
-    <p class="section-sub" style="margin-left:auto;margin-right:auto;text-align:center;">Three plans. Subscribe monthly with hosting included, or buy outright and own it.</p>
+    <p class="section-sub" style="margin:0 auto 52px;text-align:center;">What you'd pay an agency or build yourself vs. what you pay us.</p>
     <div class="compare">
       <div class="cmp-row head"><div class="cmp-cell"></div><div class="cmp-cell">Ridley Web Works</div><div class="cmp-cell">Typical Agency</div><div class="cmp-cell">DIY / Freelancer</div></div>
-      <div class="cmp-row"><div class="cmp-cell label">Setup cost</div><div class="cmp-cell ours">From $199</div><div class="cmp-cell bad">$3,000 - $5,000</div><div class="cmp-cell bad">$0 - $500</div></div>
-      <div class="cmp-row"><div class="cmp-cell label">Monthly cost</div><div class="cmp-cell ours">From $99/mo</div><div class="cmp-cell bad">$500 - $1,500/mo</div><div class="cmp-cell bad">$0</div></div>
-      <div class="cmp-row"><div class="cmp-cell label">Delivery time</div><div class="cmp-cell ours">48 hours</div><div class="cmp-cell bad">4 - 8 weeks</div><div class="cmp-cell bad">You do the work</div></div>
-      <div class="cmp-row"><div class="cmp-cell label">AI chat included</div><div class="cmp-cell ours">Yes, standard</div><div class="cmp-cell bad">Add-on ($50+/mo)</div><div class="cmp-cell bad">No</div></div>
+      <div class="cmp-row"><div class="cmp-cell label">Setup cost</div><div class="cmp-cell ours">Contact for a quote</div><div class="cmp-cell bad">$3,000 – $5,000</div><div class="cmp-cell bad">$0 – $500</div></div>
+      <div class="cmp-row"><div class="cmp-cell label">Delivery time</div><div class="cmp-cell ours">48 hours</div><div class="cmp-cell bad">4 – 8 weeks</div><div class="cmp-cell bad">You do the work</div></div>
       <div class="cmp-row"><div class="cmp-cell label">Booking calendar</div><div class="cmp-cell ours">Yes, standard</div><div class="cmp-cell bad">Add-on</div><div class="cmp-cell bad">No</div></div>
+      <div class="cmp-row"><div class="cmp-cell label">Contact form</div><div class="cmp-cell ours">Yes, standard</div><div class="cmp-cell bad">Extra charge</div><div class="cmp-cell bad">DIY setup</div></div>
       <div class="cmp-row"><div class="cmp-cell label">Built for your trade</div><div class="cmp-cell ours">Yes</div><div class="cmp-cell bad">Generic</div><div class="cmp-cell bad">Generic</div></div>
       <div class="cmp-row"><div class="cmp-cell label">Your time required</div><div class="cmp-cell ours">5 minutes</div><div class="cmp-cell bad">Hours of meetings</div><div class="cmp-cell bad">40+ hours</div></div>
     </div>
@@ -142,17 +171,17 @@
     <p class="section-sub">Here's exactly what happens after you reach out.</p>
     <div class="how-grid">
       <div class="how-step">
-        <div class="how-num">Day 0 &mdash; You reach out</div>
+        <div class="how-num">Day 0 — You reach out</div>
         <h3>5 minutes of your time</h3>
         <p>Fill out our short form or call us. Business name, phone number, services, and city. That's all we need to get started. No meetings, no back-and-forth.</p>
       </div>
       <div class="how-step">
-        <div class="how-num">Day 1 &mdash; We build</div>
+        <div class="how-num">Day 1 — We build</div>
         <h3>We get to work immediately</h3>
-        <p>Your site is designed and built using a system tailored to your industry. Booking calendar, contact form, mobile layout — all configured and ready. You get a live preview link by end of day.</p>
+        <p>Your site is designed and built tailored to your industry. Booking calendar, contact form, mobile layout — all configured and ready. You get a live preview link by end of day.</p>
       </div>
       <div class="how-step">
-        <div class="how-num">Day 2 &mdash; You go live</div>
+        <div class="how-num">Day 2 — You go live</div>
         <h3>Review, approve, launch</h3>
         <p>Look over your site. Request any changes — we turn them around same day. Once you approve, we connect your domain and flip the switch. Your site is live and taking leads.</p>
       </div>
@@ -160,75 +189,75 @@
   </div>
 </section>
 
-
 <section class="section" style="border-top:1px solid rgba(255,255,255,.07);">
   <div class="section-inner" style="max-width:760px;margin:0 auto;">
     <span class="tag">FAQ</span>
     <h2 class="section-h">Common questions</h2>
     <p class="section-sub">Answers to what most people ask before getting started.</p>
-    <div style="display:flex;flex-direction:column;">
-      <div style="padding:24px 0;border-bottom:1px solid rgba(255,255,255,.07);">
-        <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;">Do I need to provide photos?</h3>
-        <p style="color:rgba(255,255,255,.4);font-size:15px;line-height:1.75;">No. We use professional visuals that match your industry. If you have job-site photos or truck photos you want included, send them and we'll use those instead.</p>
+    <div>
+      <div class="faq-item">
+        <h3>Do I need to provide photos?</h3>
+        <p>No. We use professional stock visuals matched to your industry. If you have job-site or truck photos you want included, send them and we'll use those instead.</p>
       </div>
-      <div style="padding:24px 0;border-bottom:1px solid rgba(255,255,255,.07);">
-        <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;">What if I don't have a logo?</h3>
-        <p style="color:rgba(255,255,255,.4);font-size:15px;line-height:1.75;">No problem. We design a clean text logo for you as part of every build. If you want a full custom logo with an icon, that's included in the Premium plan.</p>
+      <div class="faq-item">
+        <h3>What if I don't have a logo?</h3>
+        <p>No problem. We design a clean text logo for you as part of every build. Full custom logo with an icon is available on higher plans.</p>
       </div>
-      <div style="padding:24px 0;border-bottom:1px solid rgba(255,255,255,.07);">
-        <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;">Can I keep my existing domain?</h3>
-        <p style="color:rgba(255,255,255,.4);font-size:15px;line-height:1.75;">Yes. If you already own a domain, we'll point it to your new site. If you don't have one, we'll walk you through buying one — it typically runs $10-15/year.</p>
+      <div class="faq-item">
+        <h3>Can I keep my existing domain?</h3>
+        <p>Yes. If you already own a domain, we'll point it to your new site. If you don't have one, we'll walk you through buying one — typically $10–15/year.</p>
       </div>
-      <div style="padding:24px 0;border-bottom:1px solid rgba(255,255,255,.07);">
-        <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;">What do I actually need to provide?</h3>
-        <p style="color:rgba(255,255,255,.4);font-size:15px;line-height:1.75;">Business name, phone number, list of services, and the city you serve. That's the minimum. The more you give us, the more personalized the site — but we can work with just the basics.</p>
+      <div class="faq-item">
+        <h3>What do I actually need to provide?</h3>
+        <p>Business name, phone number, list of services, and the city you serve. That's the minimum. The more you give us, the more personalized the site.</p>
       </div>
-      <div style="padding:24px 0;border-bottom:1px solid rgba(255,255,255,.07);">
-        <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;">What if I want changes after it's live?</h3>
-        <p style="color:rgba(255,255,255,.4);font-size:15px;line-height:1.75;">On a monthly plan, small edits are included — just text us. If you bought outright, updates are $50 each or you can switch to a subscription anytime.</p>
-      </div>
-      <div style="padding:24px 0;">
-        <h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;">How is this different from Wix or Squarespace?</h3>
-        <p style="color:rgba(255,255,255,.4);font-size:15px;line-height:1.75;">We build it for you. You never touch a template editor. The site is designed specifically for your trade and city — not a generic layout you drag and drop yourself. And we're available when something needs changing.</p>
+      <div class="faq-item">
+        <h3>How is this different from Wix or Squarespace?</h3>
+        <p>We build it for you. You never touch a template editor. The site is designed specifically for your trade and city — not a generic layout you drag and drop yourself.</p>
       </div>
     </div>
   </div>
 </section>
+
 <section class="section book-section">
   <div class="book-inner">
     <span class="tag">Get started</span>
-    <h2>Book a free call</h2>
+    <h2>Book a free consultation</h2>
     <p>15 minutes, no pressure. We'll answer your questions and tell you exactly what your site will look like.</p>
-    <div class="calendly-inline-widget" data-url="https://calendly.com/daxsonridley04/30min" style="min-width:300px;height:660px;border-radius:4px;overflow:hidden;"></div><script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <iframe
+      src="https://api.leadconnectorhq.com/widget/booking/5fhug7jzrwvKBQNmkqPi"
+      class="booking-frame"
+      title="Book a consultation"
+    ></iframe>
+  </div>
 </section>
 
 <div class="cta-band">
-  <h2>Ready to stop losing customers?</h2>
+  <h2>Ready to stop losing customers to a missing website?</h2>
   <p>Fill out the form. Your site is ready in 48 hours.</p>
-    <a href="contact.html" class="btn btn-white" style="font-size:16px;padding:16px 40px;">Get Your Website</a>
-  <p style="margin-top:18px;font-size:14px;color:rgba(255,255,255,.5);">Or call: <a href="tel:9132589693" style="color:#fff;font-weight:600;">(913) 258-9693</a></p>
+  <a href="contact.html" class="btn btn-white" style="font-size:16px;padding:16px 40px;">Get Your Website</a>
+  <p style="margin-top:18px;font-size:14px;color:rgba(255,255,255,.6);">Or call: <a href="tel:9132589693" style="color:#fff;font-weight:600;">(913) 258-9693</a></p>
 </div>
 
 <footer>
 <div class="ft-grid">
   <div class="ft-brand">
-    <span class="logo" style="font-family:'Fraunces',serif;">Ridley <span style="color:#E8601C">Web Works</span></span>
-    <p>Done-for-you websites for local service businesses. Booking, contact form, and AI chat included. 48-hour delivery, one flat fee.</p>
+    <span class="ft-logo">Ridley <span>Web Works</span></span>
+    <p>Done-for-you websites for local service businesses. Booking calendar, contact form, mobile-optimized. 48-hour delivery.</p>
   </div>
   <div class="ft-col">
     <h4>Pages</h4>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="plans.html" class="desk">Plans</a>
     <a href="plans.html">Plans</a>
     <a href="about.html">About</a>
-    <a href="referrals.html">Reviews</a>
+    <a href="referrals.html">Work</a>
     <a href="contact.html">Contact</a>
   </div>
   <div class="ft-col">
     <h4>Contact</h4>
     <a href="tel:9132589693">(913) 258-9693</a>
-    <a href="mailto:daxsonridley04@gmail.com">daxsonridley04@gmail.com</a>
+    <a href="mailto:dax@ridleywebworks.com">dax@ridleywebworks.com</a>
     <p>Overland Park, KS</p>
     <p>Mon–Fri 9am–6pm CST</p>
   </div>
@@ -236,6 +265,12 @@
 <div class="ft-bottom">&copy; 2026 Ridley Web Works. Built by Dax Ridley.</div>
 </footer>
 
-<script src="//code.tidio.co/5t43iwp3hf9wqe4cdkzbkcmmoddgrtac.js" async></script>
-
-</body></html><!-- deploy 1772238107 -->
+<script>
+const btn = document.getElementById('hamburger');
+const menu = document.getElementById('nav-mobile');
+btn.addEventListener('click', () => {
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+});
+</script>
+</body></html>
