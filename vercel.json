@@ -9,6 +9,7 @@
     { "source": "/referrals", "destination": "/referrals.html" },
     { "source": "/work", "destination": "/referrals.html" },
     { "source": "/leave-review", "destination": "/leave-review.html" },
-    { "source": "/thanks", "destination": "/thanks.html" }
+    { "source": "/thanks", "destination": "/thanks.html" },
+    { "source": "/thank-you", "destination": "/thank-you.html" }
   ]
 }
