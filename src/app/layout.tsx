@@ -18,13 +18,13 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Ridley Web Works — Custom Websites for Local Businesses",
+  title: "Ridley Web Works — Premium Websites for Local Businesses",
   description:
-    "Ridley Web Works builds custom websites for local service businesses in Overland Park, KS. No templates. Fast, modern, and designed to convert.",
+    "Ridley Web Works builds custom, high-converting websites for local service businesses in the Kansas City area. No templates. No monthly retainers. Just results.",
   openGraph: {
-    title: "Ridley Web Works — Custom Websites for Local Businesses",
+    title: "Ridley Web Works — Premium Websites for Local Businesses",
     description:
-      "Custom websites for local service businesses. No templates. Fast, modern, and designed to convert.",
+      "Custom, high-converting websites for local service businesses. No templates. Just results.",
     url: "https://ridleywebworks.com",
     type: "website",
   },
@@ -40,7 +40,7 @@ export default function RootLayout({
       lang="en"
       className={`${dmSerif.variable} ${instrumentSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col grain">
         <SmoothScroll>
           <Header />
           <main className="flex-1">{children}</main>
