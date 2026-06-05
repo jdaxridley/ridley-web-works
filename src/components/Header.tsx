@@ -1,96 +1,118 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 const navLinks = [
-  { href: "/work", label: "Work" },
+  { href: "/#work", label: "Work" },
+  { href: "/#services", label: "Services" },
+  { href: "/#process", label: "Process" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
-  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const reduce = useReducedMotion();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Lock body scroll while the mobile menu is open.
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-bg-hover/60 backdrop-blur-md bg-bg/95">
-      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-300 ${
+        scrolled || mobileOpen
+          ? "border-b border-line bg-paper/85 backdrop-blur-xl"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+        <Link
+          href="/"
+          className="flex items-center gap-2.5"
+          aria-label="Ridley Web Works home"
+          onClick={() => setMobileOpen(false)}
+        >
           <RWWLogo />
-          <span className="font-heading text-lg text-text hidden sm:block">
-            Ridley <span className="text-sage">Web Works</span>
+          <span className="text-[17px] font-semibold tracking-[-0.02em] text-ink">
+            Ridley Web Works
           </span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors duration-200 ${
-                pathname === link.href
-                  ? "text-sage"
-                  : "text-text-secondary hover:text-text"
-              }`}
+              className="text-sm font-medium text-body transition-colors duration-200 hover:text-ink"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="ml-2 px-5 py-2.5 bg-cta text-text text-sm font-semibold rounded-lg hover:bg-cta-hover transition-colors duration-200"
+            className="rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition-colors duration-200 hover:bg-ink-soft"
           >
-            Get in touch
+            Start the Build
           </Link>
         </nav>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile toggle */}
         <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
-          aria-label="Toggle menu"
+          onClick={() => setMobileOpen((v) => !v)}
+          className="flex flex-col gap-[5px] p-2 -mr-2 md:hidden"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
         >
           <motion.span
-            animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            className="block w-5 h-0.5 bg-text rounded"
+            animate={mobileOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+            transition={{ duration: reduce ? 0 : 0.2 }}
+            className="block h-0.5 w-6 rounded bg-ink"
           />
           <motion.span
             animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="block w-5 h-0.5 bg-text rounded"
+            transition={{ duration: reduce ? 0 : 0.2 }}
+            className="block h-0.5 w-6 rounded bg-ink"
           />
           <motion.span
-            animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            className="block w-5 h-0.5 bg-text rounded"
+            animate={mobileOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+            transition={{ duration: reduce ? 0 : 0.2 }}
+            className="block h-0.5 w-6 rounded bg-ink"
           />
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden border-t border-bg-hover/60 overflow-hidden bg-bg"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: reduce ? 0 : 0.2 }}
+            className="border-t border-line bg-paper md:hidden"
           >
-            <nav className="flex flex-col px-6 py-6 gap-1">
+            <nav className="flex flex-col gap-1 px-6 py-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`py-3 text-base font-medium transition-colors duration-200 ${
-                    pathname === link.href
-                      ? "text-sage"
-                      : "text-text-secondary hover:text-text"
-                  }`}
+                  className="py-3 text-lg font-medium text-ink transition-colors hover:text-brass"
                 >
                   {link.label}
                 </Link>
@@ -98,9 +120,9 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-3 px-5 py-3 bg-cta text-text text-center text-sm font-semibold rounded-lg hover:bg-cta-hover transition-colors duration-200"
+                className="mt-3 rounded-full bg-ink px-5 py-3.5 text-center text-sm font-semibold text-paper transition-colors hover:bg-ink-soft"
               >
-                Get in touch
+                Start the Build
               </Link>
             </nav>
           </motion.div>
@@ -113,17 +135,18 @@ export default function Header() {
 function RWWLogo() {
   return (
     <svg
-      viewBox="0 0 48 48"
-      className="w-9 h-9"
+      viewBox="0 0 40 40"
+      className="h-8 w-8"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
     >
-      {/* Building / R shape */}
-      <rect x="4" y="6" width="3" height="36" rx="1.5" fill="#7B8F6C" />
-      <rect x="4" y="6" width="22" height="3" rx="1.5" fill="#7B8F6C" />
-      <rect x="4" y="39" width="22" height="3" rx="1.5" fill="#7B8F6C" />
-      <rect x="12" y="14" width="12" height="20" rx="2" fill="#E8DFD0" />
-      <rect x="18" y="14" width="3" height="20" fill="#7B8F6C" />
+      <rect x="1.5" y="1.5" width="37" height="37" rx="10" fill="#141310" />
+      <path
+        d="M12 28V12h7.6c3 0 5.2 1.9 5.2 4.6 0 1.9-1.1 3.4-2.8 4l3.4 3.4h-4.3l-2.9-3h-2.5V28H12Zm3.7-6h3.7c1.4 0 2.2-.7 2.2-1.8 0-1.2-.8-1.9-2.2-1.9h-3.7V22Z"
+        fill="#f4f1ea"
+      />
+      <circle cx="28.5" cy="13" r="2" fill="#b6784c" />
     </svg>
   );
 }

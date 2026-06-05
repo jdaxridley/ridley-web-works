@@ -10,7 +10,7 @@ export default function Contact() {
   return (
     <>
       {/* Page Header */}
-      <section className="py-20 md:py-28 px-6">
+      <section className="px-6 pb-16 pt-32 md:pb-20 md:pt-40">
         <div className="max-w-3xl">
           <FadeIn>
             <h1 className="font-heading text-4xl md:text-5xl text-text mb-6">

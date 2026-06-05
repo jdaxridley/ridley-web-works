@@ -6,7 +6,7 @@ export default function Work() {
   return (
     <>
       {/* Page Header */}
-      <section className="py-20 md:py-28 px-6">
+      <section className="px-6 pb-16 pt-32 md:pb-20 md:pt-40">
         <div className="max-w-3xl">
           <FadeIn>
             <SectionTag>Portfolio</SectionTag>

@@ -1,64 +1,59 @@
 import Link from "next/link";
 
+const footerLinks = [
+  { href: "/#work", label: "Work" },
+  { href: "/#services", label: "Services" },
+  { href: "/#process", label: "Process" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-bg-footer border-t border-bg-hover/40">
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-          {/* Brand */}
-          <div>
-            <Link href="/" className="font-heading text-lg text-text">
-              Ridley <span className="text-sage">Web Works</span>
+    <footer className="border-t border-line bg-paper">
+      <div className="mx-auto max-w-6xl px-6 py-14">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-sm">
+            <Link
+              href="/"
+              className="text-lg font-semibold tracking-[-0.02em] text-ink"
+            >
+              Ridley Web Works
             </Link>
-            <p className="mt-3 text-sm text-text-muted leading-relaxed max-w-xs">
-              Custom websites for local businesses. No templates. Just results.
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              Founder-led websites for business owners who want a sharper first
+              impression and a partner who respects their time.
             </p>
           </div>
 
-          {/* Links */}
-          <div>
-            <h4 className="text-[11px] font-semibold uppercase tracking-widest text-text-muted mb-4">
-              Navigate
-            </h4>
-            <div className="flex flex-col gap-2">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/work", label: "Work" },
-                { href: "/about", label: "About" },
-                { href: "/contact", label: "Contact" },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-text-secondary hover:text-text transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-[11px] font-semibold uppercase tracking-widest text-text-muted mb-4">
-              Get in touch
-            </h4>
-            <div className="flex flex-col gap-2">
-              <a
-                href="mailto:hello@ridleywebworks.com"
-                className="text-sm text-text-secondary hover:text-sage transition-colors"
+          <nav className="flex flex-col gap-3" aria-label="Footer">
+            {footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-body transition-colors hover:text-ink"
               >
-                hello@ridleywebworks.com
-              </a>
-              <p className="text-sm text-text-muted">Overland Park, KS</p>
-            </div>
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div>
+            <p className="rww-eyebrow mb-3">Get in touch</p>
+            <a
+              href="mailto:hello@ridleywebworks.com"
+              className="block text-sm text-body transition-colors hover:text-brass"
+            >
+              hello@ridleywebworks.com
+            </a>
+            <p className="mt-2 text-sm text-muted">Overland Park, KS</p>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="border-t border-bg-hover/40 pt-6">
-          <p className="text-center text-xs text-text-muted">
-            &copy; {new Date().getFullYear()} Ridley Web Works. All rights reserved.
+        <div className="mt-12 border-t border-line pt-6">
+          <p className="text-xs text-muted">
+            &copy; {new Date().getFullYear()} Ridley Web Works. All rights
+            reserved.
           </p>
         </div>
       </div>

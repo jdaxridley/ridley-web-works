@@ -1,33 +1,62 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #2C2824;
-  --color-bg-subtle: #34302B;
-  --color-bg-hover: #3D3731;
-  --color-bg-footer: #1A1815;
-  --color-text: #E8DFD0;
-  --color-text-secondary: #A89F92;
-  --color-text-muted: #6B645B;
-  --color-sage: #7B8F6C;
-  --color-clay: #C4956A;
-  --color-cta: #A33B20;
-  --color-cta-hover: #8A3119;
-  --font-heading: var(--font-dm-serif);
-  --font-body: var(--font-instrument);
+  /* ------------------------------------------------------------------
+     Ridley Web Works — light editorial palette
+     Warm white page, charcoal ink, muted gray, line gray,
+     brass/copper accent used sparingly. Never pure #000 / #fff.
+  ------------------------------------------------------------------ */
+  --color-paper: #f4f1ea;       /* warm white — page background        */
+  --color-surface: #fbfaf6;     /* elevated card surface (not pure white) */
+  --color-ink: #141310;         /* charcoal — headings / strong text   */
+  --color-ink-soft: #171717;    /* soft black                          */
+  --color-body: #44413b;        /* readable warm gray — body copy      */
+  --color-muted: #8e8a84;       /* muted gray — eyebrows / meta        */
+  --color-line: #d8d2c8;        /* line gray — borders / hairlines     */
+  --color-line-soft: #e7e1d6;   /* softer line / subtle fills          */
+  --color-brass: #b6784c;       /* accent — use sparingly              */
+  --color-brass-deep: #9f6740;  /* accent, pressed/hover               */
+
+  /* ------------------------------------------------------------------
+     Legacy token aliases — keep /about /work /contact building.
+     Remapped to the new light palette.
+  ------------------------------------------------------------------ */
+  --color-bg: #f4f1ea;
+  --color-bg-subtle: #fbfaf6;
+  --color-bg-hover: #d8d2c8;
+  --color-bg-footer: #16140f;
+  --color-text: #141310;
+  --color-text-secondary: #44413b;
+  --color-text-muted: #8e8a84;
+  --color-sage: #b6784c;
+  --color-clay: #9f6740;
+  --color-cta: #b6784c;
+  --color-cta-hover: #9f6740;
+
+  --font-heading: var(--font-inter-tight);
+  --font-body: var(--font-inter);
 }
 
 :root {
-  --color-bg: #2C2824;
-  --color-bg-subtle: #34302B;
-  --color-bg-hover: #3D3731;
-  --color-bg-footer: #1A1815;
-  --color-text: #E8DFD0;
-  --color-text-secondary: #A89F92;
-  --color-text-muted: #6B645B;
-  --color-sage: #7B8F6C;
-  --color-clay: #C4956A;
-  --color-cta: #A33B20;
-  --color-cta-hover: #8A3119;
+  --color-paper: #f4f1ea;
+  --color-surface: #fbfaf6;
+  --color-ink: #141310;
+  --color-body: #44413b;
+  --color-muted: #8e8a84;
+  --color-line: #d8d2c8;
+  --color-brass: #b6784c;
+  --color-brass-deep: #9f6740;
+  /* legacy */
+  --color-bg: #f4f1ea;
+  --color-bg-subtle: #fbfaf6;
+  --color-bg-hover: #d8d2c8;
+  --color-text: #141310;
+  --color-text-secondary: #44413b;
+  --color-text-muted: #8e8a84;
+  --color-sage: #b6784c;
+  --color-clay: #9f6740;
+  --color-cta: #b6784c;
+  --color-cta-hover: #9f6740;
 }
 
 * {
@@ -38,20 +67,36 @@
 
 html {
   scroll-behavior: smooth;
+  /* keep section anchors clear of the sticky header */
+  scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--color-paper);
+  color: var(--color-body);
   font-family: var(--font-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.7;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+/* Heading defaults live in @layer base so Tailwind color/utility classes
+   (e.g. text-paper on a dark CTA card) always override them, regardless of
+   source order. */
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading), system-ui, sans-serif;
+    color: var(--color-ink);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
 }
 
 ::selection {
-  background: var(--color-sage);
-  color: var(--color-bg);
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
 a {
@@ -59,16 +104,95 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ------------------------------------------------------------------
+   Reusable motion / surface utilities (transform + opacity + shadow
+   only — GPU-composited, no layout reflow).
+------------------------------------------------------------------ */
+.rww-eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+}
+
+.rww-elevate {
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
+    0 24px 50px -30px rgba(20, 19, 16, 0.28),
+    0 6px 16px -12px rgba(20, 19, 16, 0.18);
+}
+
+.card-lift,
+.card-lift-sm {
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease-out,
+    box-shadow 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 300ms ease-out;
+  will-change: transform;
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.7) inset,
+    0 34px 64px -36px rgba(20, 19, 16, 0.34);
+}
+
+.card-lift-sm:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.7) inset,
+    0 22px 44px -32px rgba(20, 19, 16, 0.28);
+}
+
+/* image hover crop/scale wrapper */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom > * {
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.img-zoom:hover > * {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .card-lift:hover,
+  .card-lift-sm:hover,
+  .img-zoom:hover > * {
+    transform: none;
+  }
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
+  background: var(--color-paper);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-bg-hover);
-  border-radius: 4px;
+  background: var(--color-line);
+  border-radius: 6px;
+  border: 2px solid var(--color-paper);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
+  background: var(--color-muted);
 }

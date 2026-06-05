@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface FadeInProps {
@@ -24,11 +24,23 @@ export default function FadeIn({
   direction = "up",
   className,
 }: FadeInProps) {
+  const prefersReduced = useReducedMotion();
+
+  // Reduced motion: render fully visible, no transform — identical wrapper
+  // markup to the animated path so SSR/client hydration always matches.
+  if (prefersReduced) {
+    return (
+      <motion.div initial={false} animate={{ opacity: 1, x: 0, y: 0 }} className={className}>
+        {children}
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, ...directionMap[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "0px 0px -8% 0px" }}
       transition={{
         duration: 0.6,
         delay,
