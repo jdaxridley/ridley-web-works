@@ -1,6 +1,14 @@
 import FadeIn from "@/components/FadeIn";
 import SectionTag from "@/components/SectionTag";
 import CTABand from "@/components/CTABand";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Dax Ridley",
+  description:
+    "Dax Ridley founded Ridley Web Works, a Plano, Texas web design studio building custom websites for local service businesses.",
+  alternates: { canonical: "/about" },
+};
 
 export default function About() {
   return (
@@ -15,7 +23,7 @@ export default function About() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-text-secondary text-xl leading-relaxed max-w-2xl">
-              I build websites for local businesses that actually want to grow.
+              I build custom websites for local service businesses in Plano, Texas and beyond.
             </p>
           </FadeIn>
         </div>
@@ -46,8 +54,8 @@ export default function About() {
                   customers.
                 </p>
                 <p>
-                  I&apos;m based in Overland Park, KS, and I work with
-                  businesses across the Kansas City area and beyond.
+                  I&apos;m based in Plano, Texas, and I work with local service
+                  businesses in DFW and beyond.
                 </p>
               </div>
             </FadeIn>

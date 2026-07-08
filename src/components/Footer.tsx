@@ -21,8 +21,8 @@ export default function Footer() {
               Ridley Web Works
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-muted">
-              Founder-led websites for business owners who want a sharper first
-              impression and a partner who respects their time.
+              Founder-led websites for local service businesses in Plano, Texas
+              and beyond.
             </p>
           </div>
 
@@ -46,7 +46,7 @@ export default function Footer() {
             >
               hello@ridleywebworks.com
             </a>
-            <p className="mt-2 text-sm text-muted">Overland Park, KS</p>
+            <p className="mt-2 text-sm text-muted">Plano, TX</p>
           </div>
         </div>
 

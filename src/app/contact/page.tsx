@@ -156,7 +156,7 @@ export default function Contact() {
 
               <div>
                 <SectionTag>Location</SectionTag>
-                <p className="text-text-secondary">Overland Park, KS</p>
+                <p className="text-text-secondary">Plano, TX</p>
               </div>
 
               <div>

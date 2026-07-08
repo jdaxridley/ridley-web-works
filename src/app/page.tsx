@@ -56,7 +56,7 @@ export default function Home() {
         <FadeIn>
           <p className="rww-eyebrow">
             <span className="text-brass">/ </span>
-            Solo web studio · Overland Park, KS
+            Solo web studio · Plano, TX
           </p>
         </FadeIn>
         <FadeIn delay={0.06}>
@@ -73,8 +73,8 @@ export default function Home() {
         </FadeIn>
         <FadeIn delay={0.14}>
           <p className="mt-9 max-w-xl text-[17px] leading-relaxed text-body">
-            I&apos;m Dax — a one-person studio building custom websites for
-            local businesses that are tired of looking like everyone else. No
+            I&apos;m Dax — a one-person studio in Plano, Texas building custom websites for
+            local service businesses that are tired of looking like everyone else. No
             templates. One client at a time.
           </p>
         </FadeIn>
@@ -216,8 +216,8 @@ export default function Home() {
               className="mt-7 font-normal text-ink"
               style={{ fontSize: "clamp(1.35rem, 2.8vw, 2rem)", lineHeight: 1.28, letterSpacing: "-0.015em" }}
             >
-              I&apos;m a solo web designer in the Kansas City area. I take on a
-              handful of local businesses at a time and build each site by hand —
+              I&apos;m a solo web designer in Plano, Texas. I take on a
+              handful of local service businesses at a time and build each site by hand —
               no template farms, no offshore assembly line, no agency markup.
               Just one person who cares whether your website is any good.
             </p>

@@ -1,6 +1,14 @@
 import FadeIn from "@/components/FadeIn";
 import SectionTag from "@/components/SectionTag";
 import CTABand from "@/components/CTABand";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Website Work",
+  description:
+    "Recent custom website projects from Ridley Web Works, a Plano, Texas web design studio for local service businesses.",
+  alternates: { canonical: "/work" },
+};
 
 export default function Work() {
   return (
