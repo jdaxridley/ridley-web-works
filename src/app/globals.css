@@ -6,16 +6,18 @@
      Warm white page, charcoal ink, muted gray, line gray,
      brass/copper accent used sparingly. Never pure #000 / #fff.
   ------------------------------------------------------------------ */
-  --color-paper: #f4f1ea;       /* warm white — page background        */
-  --color-surface: #fbfaf6;     /* elevated card surface (not pure white) */
-  --color-ink: #141310;         /* charcoal — headings / strong text   */
-  --color-ink-soft: #171717;    /* soft black                          */
-  --color-body: #44413b;        /* readable warm gray — body copy      */
-  --color-muted: #8e8a84;       /* muted gray — eyebrows / meta        */
-  --color-line: #d8d2c8;        /* line gray — borders / hairlines     */
-  --color-line-soft: #e7e1d6;   /* softer line / subtle fills          */
-  --color-brass: #b6784c;       /* accent — use sparingly              */
-  --color-brass-deep: #9f6740;  /* accent, pressed/hover               */
+  /* DARK premium palette (locked 2026-07-08, built to the 500 Designs bar).
+     Near-black base, warm off-white type, brass as a single spark only. */
+  --color-paper: #0e0d0b;       /* near-black — page background         */
+  --color-surface: #171512;     /* elevated card surface                */
+  --color-ink: #f7f3ec;         /* warm off-white — headings / strong   */
+  --color-ink-soft: #ffffff;    /* pure white (rare)                    */
+  --color-body: #b4aea5;        /* readable warm gray — body copy       */
+  --color-muted: #7c766d;       /* muted gray — eyebrows / meta         */
+  --color-line: rgba(247,243,236,0.13); /* hairlines on dark            */
+  --color-line-soft: rgba(247,243,236,0.08);
+  --color-brass: #c08a5a;       /* accent — brighter for dark, sparing  */
+  --color-brass-deep: #a9744a;  /* accent, pressed/hover                */
 
   /* ------------------------------------------------------------------
      Legacy token aliases — keep /about /work /contact building.
@@ -38,14 +40,14 @@
 }
 
 :root {
-  --color-paper: #f4f1ea;
-  --color-surface: #fbfaf6;
-  --color-ink: #141310;
-  --color-body: #44413b;
-  --color-muted: #8e8a84;
-  --color-line: #d8d2c8;
-  --color-brass: #b6784c;
-  --color-brass-deep: #9f6740;
+  --color-paper: #0e0d0b;
+  --color-surface: #171512;
+  --color-ink: #f7f3ec;
+  --color-body: #b4aea5;
+  --color-muted: #7c766d;
+  --color-line: rgba(247,243,236,0.13);
+  --color-brass: #c08a5a;
+  --color-brass-deep: #a9744a;
   /* legacy */
   --color-bg: #f4f1ea;
   --color-bg-subtle: #fbfaf6;
@@ -59,9 +61,10 @@
   --color-cta-hover: #9f6740;
 }
 
+/* NOTE: do NOT reset padding/margin on * — Tailwind v4 Preflight already
+   handles resets, and a blanket `* { padding: 0 }` overrides every padding
+   utility (px-*, py-*) site-wide, collapsing all layout spacing. */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -95,7 +98,7 @@ body {
 }
 
 ::selection {
-  background: var(--color-ink);
+  background: var(--color-brass);
   color: var(--color-paper);
 }
 
