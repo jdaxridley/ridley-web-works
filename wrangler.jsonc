@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "ridley-web-works",
+  "account_id": "d775c30ca7c52935d59e282d9fff2608",
   "compatibility_date": "2026-07-27",
   "assets": {
     "directory": "./out"
