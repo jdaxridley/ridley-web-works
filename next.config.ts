@@ -1,14 +1,11 @@
 import type { NextConfig } from "next";
 
+// Cloudflare Pages serves this site as static files. The legacy Vercel redirect
+// is preserved in public/_redirects, which Cloudflare Pages applies at the edge.
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/about.html",
-        destination: "/about",
-        permanent: true,
-      },
-    ];
+  output: "export",
+  images: {
+    unoptimized: true,
   },
 };
 
