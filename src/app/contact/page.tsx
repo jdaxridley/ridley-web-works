@@ -147,10 +147,10 @@ export default function Contact() {
               <div>
                 <SectionTag>Email</SectionTag>
                 <a
-                  href="mailto:hello@ridleywebworks.com"
+                  href="mailto:dax@ridleywebworks.com"
                   className="text-text text-lg hover:text-sage transition-colors"
                 >
-                  hello@ridleywebworks.com
+                  dax@ridleywebworks.com
                 </a>
               </div>
 
@@ -177,10 +177,10 @@ export default function Contact() {
                 <p className="text-text-muted text-sm leading-relaxed">
                   Prefer email? Reach out directly at{" "}
                   <a
-                    href="mailto:hello@ridleywebworks.com"
+                    href="mailto:dax@ridleywebworks.com"
                     className="text-sage hover:text-clay transition-colors"
                   >
-                    hello@ridleywebworks.com
+                    dax@ridleywebworks.com
                   </a>
                 </p>
               </div>

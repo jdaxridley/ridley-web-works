@@ -60,7 +60,7 @@ const entitySchema = {
       "@id": "https://ridleywebworks.com/#organization",
       name: "Ridley Web Works",
       url: "https://ridleywebworks.com/",
-      email: "hello@ridleywebworks.com",
+      email: "dax@ridleywebworks.com",
       founder: { "@id": "https://ridleywebworks.com/#dax-ridley" },
       areaServed: [
         { "@type": "City", name: "Plano" },

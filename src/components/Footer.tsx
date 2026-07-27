@@ -41,10 +41,10 @@ export default function Footer() {
           <div>
             <p className="rww-eyebrow mb-3">Get in touch</p>
             <a
-              href="mailto:hello@ridleywebworks.com"
+              href="mailto:dax@ridleywebworks.com"
               className="block text-sm text-body transition-colors hover:text-brass"
             >
-              hello@ridleywebworks.com
+              dax@ridleywebworks.com
             </a>
             <p className="mt-2 text-sm text-muted">Plano, TX</p>
           </div>
